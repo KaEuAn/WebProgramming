@@ -1,11 +1,32 @@
 body {
-	font-size: 20px;
+	font-size: 1.5vw;
 	text-align: center;
 }
 ul {
 	display: inline-block;
 	text-align: left;
 }
+li {
+	padding: 0.3vw;	
+}
 h3 {
-	
+	font-family: Verdana;
+	font-size: 130%;
+}
+.experience {
+	margin : 2vh 10vw;
+	border: inset 4px blue;
+	padding: 0.2vw;
+}
+.contacts {
+	font-family: cursive;
+}
+a:link {
+	color: green;
+}
+a:visited {
+	color: blue;
+}
+a:hover {
+	font-size : 120%;
 }
