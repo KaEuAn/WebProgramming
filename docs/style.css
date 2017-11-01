@@ -4,9 +4,15 @@ body {
 }
 h3 {
 	font-size: 130%;
+	text-align: center;
 }
 .about {
-	margin: 1vw 0vw 3vw 0vw;
+	margin: 1vw 25vw 1vw 25vw;
+	text-align: justify;
+}
+.about p {
+	text-indent: 3vw;
+	margin: 0.2vw;
 }
 
 .experience {
