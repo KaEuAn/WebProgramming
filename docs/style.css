@@ -5,17 +5,20 @@ body {
 h3 {
 	font-size: 130%;
 }
+.about {
+	margin: 1vw 0vw 3vw 0vw;
+}
+
 .experience {
 	margin: 1vw 25vw 1vw 25vw;
+	padding: 0.2vw 0.2vw;
+	border: 4px inset blue;
 }
 .experience ul {
 	display: inline-block;
 	text-align: left;
-	border: 4px inset blue;
 }
-.about {
-	margin: 1vw 0vw 3vw 0vw;
-}
+
 .contacts {
 	font-size: 110%;
 }
