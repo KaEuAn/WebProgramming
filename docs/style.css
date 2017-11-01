@@ -5,6 +5,7 @@ body {
 h3 {
 	font-size: 130%;
 	text-align: center;
+	font-family: Helvetica;
 }
 .about {
 	margin: 1vw 25vw 1vw 25vw;
@@ -27,6 +28,9 @@ h3 {
 
 .contacts {
 	font-size: 110%;
+}
+.contacts a{
+	font-family: Gabriola;
 }
 .contacts a:link {
 	color: green;
