@@ -43,7 +43,7 @@ func PowerGenerator(x int) (func() int) {
 
 
 
-func main(){
+/*func main(){
 	input := []int{0, 3, 2, 5}
 	result := RemoveEven(input)
 	fmt.Println(result) // Должно напечататься [3 5]
@@ -53,4 +53,4 @@ func main(){
 	fmt.Println(gen()) // Должно напечатать 8
 	fmt.Println(DifferentWordsCount("Hello, world!HELLO  wOrlD...12"))
 	// Должно напечатать 2
-}
+}*/
