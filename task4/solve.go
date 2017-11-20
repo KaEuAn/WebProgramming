@@ -1,6 +1,6 @@
 package main
 
-import ("fmt"; "unicode"; "strings")
+import ("unicode"; "strings")
 
 func RemoveEven(slice []int) (newSlice []int) {
 	newSlice = make([]int, 0, len(slice))
@@ -40,17 +40,3 @@ func PowerGenerator(x int) (func() int) {
 		return answer
 	}
 }
-
-
-
-/*func main(){
-	input := []int{0, 3, 2, 5}
-	result := RemoveEven(input)
-	fmt.Println(result) // Должно напечататься [3 5]
-	gen := PowerGenerator(2)
-	fmt.Println(gen()) // Должно напечатать 2
-	fmt.Println(gen()) // Должно напечатать 4
-	fmt.Println(gen()) // Должно напечатать 8
-	fmt.Println(DifferentWordsCount("Hello, world!HELLO  wOrlD...12"))
-	// Должно напечатать 2
-}*/
