@@ -40,7 +40,3 @@ func PowerGenerator(x int) (func() int) {
 		return answer
 	}
 }
-
-func main() {
-
-}
