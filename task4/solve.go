@@ -22,7 +22,7 @@ func DifferentWordsCount(s string) (count int) {
 		for ; i < len(s) && unicode.IsLetter(rune(s[i])); i++ {
 			curString += string(s[i])
 		}
-		if _, ok := dict[curString]; ok == false {
+		if _, ok := dict[curString]; (curString != "" && ok == false) {
 			dict[curString] = 1;
 			count++
 		}
