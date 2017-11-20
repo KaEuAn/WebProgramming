@@ -12,7 +12,7 @@ func RemoveEven(slice []int) (newSlice []int) {
 	return
 }
 
-func DifferentWordsCount(s string) (count uint64) {
+func DifferentWordsCount(s string) (count int) {
 	count = 0
 	s = strings.ToLower(s)
 	dict := make(map[string]uint8)
@@ -39,4 +39,8 @@ func PowerGenerator(x int) (func() int) {
 		answer *= number
 		return answer
 	}
+}
+
+func main() {
+
 }
