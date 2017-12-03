@@ -1,27 +1,40 @@
 package main
 
-import ("net/http"; "json"; "github.com/gorilla/mux")
+import ("net/http"; "encoding/json"; "github.com/gorilla/mux"; "strconv")
 
-table = make([]string, 0, 0)
+var (table = make([]string, 0, 0))
+
+type Answer struct{
+	url string `json:"url"`;
+}
 
 
 func postKey(w http.ResponseWriter, r *http.Request) {
-	json.NewDecoder(r).Decode(answer)
-	ind := answer[url]
+	var answer Answer;
+	json.NewDecoder(r.Body).Decode(&answer)
+	ind := answer.url
 	table = append(table, ind);
-	w.Write(len(table))
+	ret, err := json.Marshal(len(table) - 1)
+	if err != nil{
+		panic(err)
+	}
+	w.Write(ret)
 }
 
 func getKey(w http.ResponseWriter, r *http.Request) {
-
-	w.WriteHeader(http.MovedPermanently)
+	vars := mux.Vars(r)
+	key, err := strconv.Atoi(vars["key"])
+	if err != nil {
+		panic(err)
+	}
+	http.Redirect(w, r, table[key], http.StatusFound)
 }
 
 func main() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", postKey).Methods("POST")
 	router.HandleFunc("/{key}", getKey)
-	router.ListenAndServe(":8082")
+	http.ListenAndServe(":8082", router)
 }
 
 
