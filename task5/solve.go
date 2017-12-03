@@ -29,7 +29,7 @@ func getKey(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		panic(err)
 	}
-	http.Redirect(w, r, table[key], http.StatusFound)
+	http.Redirect(w, r, table[key], 301)
 }
 
 func main() {
