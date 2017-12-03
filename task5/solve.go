@@ -14,7 +14,13 @@ func postKey(w http.ResponseWriter, r *http.Request) {
 	json.NewDecoder(r.Body).Decode(&answer)
 	ind := answer.url
 	table = append(table, ind);
-	w.Write([]byte(strconv.Itoa(len(table) - 1)))
+	ans := make(map[string]string)
+	ans["key"] = ind
+	x, err := json.Marshal(ans)
+	if err != nil{
+		panic(err)
+	}
+	w.Write([]byte(x))
 }
 
 func getKey(w http.ResponseWriter, r *http.Request) {
