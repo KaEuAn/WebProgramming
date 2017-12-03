@@ -5,22 +5,22 @@ import ("net/http"; "encoding/json"; "github.com/gorilla/mux"; "strconv")
 var (table = make([]string, 0, 0))
 
 type Answer struct{
-	url string `json:"url"`;
+	Url string `json:"url"`;
 }
 
 
 func postKey(w http.ResponseWriter, r *http.Request) {
 	var answer Answer;
 	json.NewDecoder(r.Body).Decode(&answer)
-	ind := answer.url
+	ind := answer.Url
 	table = append(table, ind);
 	ans := make(map[string]string)
-	ans["key"] = ind
+	ans["key"] = strconv.Itoa(len(table) - 1)
 	x, err := json.Marshal(ans)
 	if err != nil{
 		panic(err)
 	}
-	w.Write([]byte(x))
+	w.Write(x)
 }
 
 func getKey(w http.ResponseWriter, r *http.Request) {
